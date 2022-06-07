@@ -41,6 +41,9 @@ def convert(a):
     if a == 2:
         b ='O'
     return b
+
+def printChar(a):
+    pass
         
 def dispBoard():
     chars = [[convert(board[y][x]) for x in range(3)] for y in range(3)]
