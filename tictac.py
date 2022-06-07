@@ -37,9 +37,9 @@ def checkWin(board):
 def convert(a):
     b = ' '
     if a == 1:
-        b = ('X', 'green')
+        b = 'X'
     if a == 2:
-        b =('O', 'blue')
+        b ='O'
     return b
         
 def dispBoard():
