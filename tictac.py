@@ -43,30 +43,50 @@ def convert(a):
     return b
 
 def printChar(a):
-    pass
+    if a == 'X':
+        return(colored(a, 'blue'))
+    elif a == 'O':
+        return(colored(a, 'yellow'))
+    else:
+        return(' ')
+         
         
 def dispBoard():
     chars = [[convert(board[y][x]) for x in range(3)] for y in range(3)]
     print('  1   2   3')
-    print('A ' + chars[0][0] +' | '+chars[0][1]+' | '+ chars[0][2] +  '')
+    print('A ' + str(printChar(chars[0][0])) +' | '+ str(printChar(chars[0][1]) )+' | '+  str(printChar(chars[0][2])) +  '')
     print(' -----------')
-    print('B ' + chars[1][0] +' | '+chars[1][1]+' | '+ chars[1][2] +  '')
+    print('B ' + str(printChar(chars[1][0])) +' | '+ str(printChar(chars[1][1])) +' | '+  str(printChar(chars[1][2])) +  '')
     print(' -----------')
-    print('C ' + chars[2][0] +' | '+chars[2][1]+' | '+ chars[2][2] +  '') 
+    print('C ' + str(printChar(chars[2][0])) +' | '+ str(printChar(chars[2][1])) +' | '+  str(printChar(chars[2][2])) +  '') 
 
 def getInputX():
     def decode(coords):
         coords = coords.strip()
+        coordS = coords.split()
+
         if len(coords) != 3:
             os.system('cls')
             main()
 
-        x = int(coords[1]) - 1
-        if x >= 3:
+        if(coords[1] == 'X' or coords[1] == 'O' or coords[1] == 'x' or coords[1] == 'o'):
+            x = int(coords[2]) - 1
+            if x >= 3:
+                os.system('cls')
+                main()
+            y = coords[0]
+            xo = coords[1]
+        elif(coords[1] == '1' or coords[1] == '2' or coords[1] == '3'):
+            x = int(coords[1]) - 1
+            if x >= 3:
+                os.system('cls')
+                main()
+            y = coords[0]
+            xo = coords[2]
+        else:
             os.system('cls')
             main()
-        y = coords[0]
-        xo = coords[2]
+
 
         match xo:
             case 'x' | 'X':
