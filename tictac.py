@@ -1,5 +1,6 @@
 """
 Auther: Caleb Malcarne
+Date: 6/13/2022
 """
 
 import os
@@ -41,7 +42,8 @@ def checkWin(board):
                 if 0 not in stat[0] and 0 not in stat[1] and 0 not in stat[2]:
                     win = 3
     return win
-        
+
+#converts array into 'X's and 'O's and blank paces       
 def convert(a):
     b = ' '
     if a == 1:
@@ -50,6 +52,7 @@ def convert(a):
         b ='O'
     return b
 
+#prints coloured text
 def printChar(a):
     if a == 'X':
         return(colored(a, 'blue'))
@@ -57,7 +60,8 @@ def printChar(a):
         return(colored(a, 'yellow'))
     else:
         return(' ')
-                
+
+#displays the board              
 def dispBoard():
     chars = [[convert(board[y][x]) for x in range(3)] for y in range(3)]
     print('  1   2   3')
@@ -67,7 +71,9 @@ def dispBoard():
     print(' -----------')
     print('C ' + str(printChar(chars[2][0])) +' | '+ str(printChar(chars[2][1])) +' | '+  str(printChar(chars[2][2])) +  '') 
 
+#gets input from the user and converts it into a form the program unserstands
 def getInputX():
+
     def decode(coords):
         coords = coords.strip()
         coordS = coords.split()
