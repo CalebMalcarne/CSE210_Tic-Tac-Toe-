@@ -32,6 +32,9 @@ def checkWin(board):
             if win == -1:
                 stat = [checkStat([board[2-i][i] for i in range(2,-1,-1)])]
                 win = winStat(stat)
+                stat =[[board[y][x] for x in range(3) if board[x][y] == 0] for y in range(3)]
+                if 0 not in stat[0] and 0 not in stat[1] and 0 not in stat[2]:
+                    win = 3
     return win
         
 def convert(a):
@@ -49,8 +52,7 @@ def printChar(a):
         return(colored(a, 'yellow'))
     else:
         return(' ')
-         
-        
+                
 def dispBoard():
     chars = [[convert(board[y][x]) for x in range(3)] for y in range(3)]
     print('  1   2   3')
@@ -115,9 +117,11 @@ def getInputX():
     decode(coords)
 
     if checkWin(board) == 1:
-        print("[\'X\'s Win")
+        print("\'X\'s Win")
     elif checkWin(board) == 2:
         print("\'O\'s Win")
+    elif checkWin(board) == 3:
+        print("Tie")
     else:
         os.system('cls')
         main()
