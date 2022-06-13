@@ -1,9 +1,14 @@
+"""
+Auther: Caleb Malcarne
+"""
+
 import os
 from colorama import init
 from termcolor import colored
 init()
 board = [[0,0,0],[0,0,0],[0,0,0]]
 
+#checks all win states, and returns a value corisponding to a win or loose
 def checkWin(board):
     def checkStat(check):
         match check:
