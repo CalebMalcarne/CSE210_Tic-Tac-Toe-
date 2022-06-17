@@ -19,11 +19,17 @@ B   |   |
 C   |   |  
 ```
 any invalid input will reprint the screen with no change
+the game will end once there is a tie or X's or O's have a corss or vertical
 
 ## how to run
+make sure python 3.8.0 in installed
+navigate to the game file and run the command
+```
+ptyhon3 tictac.py
+```
 
 
-##command examples:
+## command examples:
 B2O or Bo2 or a1O or Ax1
 any combinations of capitals and lowecase will be accepted
 
