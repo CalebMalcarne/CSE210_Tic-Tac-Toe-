@@ -1,7 +1,7 @@
 # CSE210_TicTac
 the game allows ou to enter any value on each turn:
 how to select a cell:
-
+```
   1   2   3
 A   |   |  
  -----------
@@ -17,9 +17,9 @@ A X |   |
 B   |   |  
  -----------
 C   |   |  
-
+```
 any invalid input will reprint the screen with no change
 
-command examples:
+##command examples:
 B2O or Bo2 or a1O or Ax1
 any combinations of capitals and lowecase will be accepted
